@@ -1,0 +1,223 @@
+/* Global Styles */
+body {
+    margin: 0;
+    /* padding-left: 17vw; Match the navbar width */
+    padding-top: 10px; /* Space between top and main content */
+    font-family: "Kanit", sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: #c7cacd;
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    
+    width: 17vw; /* Sidebar width */
+    height: 100vh; /* Full height of the viewport */
+    position: fixed; /* Fixed on the left side */
+    top: 0;
+    left: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    font-family: "Kanit", sans-serif;
+    z-index: 999; /* Ensure it stays on top of other elements */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Logo Section */
+  .nav-sec1 {
+    width: 15vw;
+    height: 25vh;
+    background-color: #ffffff;
+    margin-left: 5%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    text-align: center;
+    padding-top: 2%;
+  }
+  
+  .nav-img {
+    width: 10vw;
+    height: 20vh;
+    padding-top: 10%;
+  }
+  
+  /* Navigation Links Section */
+  .nav-sec2 {
+    width: 15vw;
+    height: 72vh;
+    background-color: #ffffff;
+    margin-left: 5%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .nav-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .item {
+    width: 12vw;
+    height: 7vh;
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin: 10% auto;
+    position: relative;
+    font-weight: 600;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .item:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #c8b6ff;
+    cursor: pointer;
+    border-style: none;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  /* Main Content Styles */
+  .container{
+    display:flex;
+  }
+  .main-content {
+    margin-left: 1vw; /* Space content after navbar */
+    padding: 20px; /* Padding for inner content spacing */
+    /*background-color: #f8f9fa; Optional: light background for contrast */
+    min-height: 100vh; /* Ensure it fills the viewport */
+    box-sizing: border-box;
+  }
+  
+  .good-morning {
+    
+    background-image: url('../assets/divbackground.jpg');
+    /* background-color: #f0ebd8;  */
+    background-size: 100% 100%;  /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; 
+    height: 30vh; 
+    width: calc(100% - 40px); 
+    max-width: 60vw; 
+    padding: 20px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; 
+    border-radius: 20px; 
+    /* margin: 40px auto;  */
+  }
+  .meetings{
+    background-color: #003049;
+    height:40vh;
+    width:30vw;
+    margin-top: 5vh;
+    border-radius: 10px;
+    color:white;
+   
+    
+  }
+  .presentchart{
+    background-color: white;
+    height:40vh;
+    width:30vw;
+    margin-top: 5vh;
+    border-radius: 10px;
+    margin-left: 2vw;
+  
+  }
+  .main-main{
+    display:flex;
+    
+  }
+
+  .present h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+
+
+/* Adjust side-div styles for consistency */
+.side-div {
+ background-color: #778da9;
+  height: 77vh;
+  width:13vw; 
+  padding: 10px; /* Add some padding */
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 10px;
+  margin-top: 3vh;
+  color:white;
+
+  
+}
+
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      padding-left: 0; /* Remove padding for mobile screens */
+    }
+  
+    .navbar {
+      width: 100%;
+      height: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+  
+    .mobile-active {
+      transform: translateY(0);
+    }
+  
+    .nav-sec1 {
+      width: 100%;
+      height: 15vh;
+      margin: 0;
+    }
+  
+    .nav-img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .nav-sec2 {
+      width: 100%;
+      height: auto;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+    }
+  
+    .show-menu {
+      display: flex;
+    }
+  
+    .nav-items {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0;
+    }
+  
+    .item {
+      width: 90%;
+      margin: 10px auto;
+    }
+  }
+  
+  

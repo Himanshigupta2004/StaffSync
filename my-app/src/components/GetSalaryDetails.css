@@ -1,0 +1,81 @@
+
+.get-salary-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 70vw;
+    margin:20px auto;
+  }
+  
+  .get-salary-details__form {
+    background-color: #ece4db;
+    width: 70vw;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    /* display:flex; */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .get-salary-details__form input {
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .get-salary-details__form button {
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .get-salary-details__salary-records {
+    background-color: #fff;
+    padding: 20px;
+    width: 70vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .salary-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .salary-column {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+  }
+  
+  .salary-column strong {
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .salary-column span {
+    font-weight: 400;
+  }
+
+
+  .salary-image{
+    max-width: 150px;
+  height: auto;
+  margin-left: 20px; 
+  mix-blend-mode:darken;
+  
+  background-color: #ff6347; 
+  }
+  
+  .divdiv{
+    display: flex;
+  }

@@ -1,0 +1,133 @@
+.leave-application {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center; 
+    /* justify-content: center; */
+    min-height: 100vh; 
+    padding: 20px;
+    background-color: #f4f4f9;
+    /* margin-left: 1vw; */
+    width:80vw;
+    background-size: cover;
+  }
+  
+  h2, h3 {
+    text-align: center;
+    color: #d62828;
+  }
+  
+  .leave-form-container {
+    background-color: #fae1dd;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 75vw;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+  }
+  
+  .inputt {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #967aa1;
+    flex: 1; 
+    min-width: 200px;
+  }
+  
+  .inputt.start-date {
+    background-color: #e3f2fd;
+  }
+  
+  .inputt.end-date {
+    background-color: #e8f5e9;
+  }
+  
+  .inputt.reason {
+    background-color: #fff3e0;
+  }
+  
+  .inputt > input,
+  .inputt > textarea {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 20vw; 
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+
+  .leave-records-container {
+    /* background-color: #fff3e0; Light orange */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+  }
+  
+  .leave-records-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 2px solid #dcdcdc;
+    background-color: white;
+    border-radius:10px ;
+  }
+  
+  .record-header-item {
+    font-weight: bold;
+    width: 15%;
+    text-align: center;
+  }
+  
+  .leave-records-body {
+    margin-top: 10px;
+  }
+  
+  .leave-record-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #dcdcdc;
+  }
+  
+  .record-item {
+    width: 15%; 
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .leave-records-header,
+    .leave-record-row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .record-header-item,
+    .record-item {
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
