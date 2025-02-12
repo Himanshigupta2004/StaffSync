@@ -1,0 +1,10 @@
+
+.chart-container {
+    width:30vw;  
+    height: 27vh;  
+    margin: 0 auto;
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+  }
+  

@@ -1,0 +1,139 @@
+.monthly-attendance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  height: 50vh; /* Default height */
+  margin-top: 10px;
+  margin: auto;
+  gap: 10px;
+  transition: height 0.5s ease-in-out; /* Smooth transition */
+}
+
+.monthly-attendance-container.expanded {
+  height: 70vh; /* Increased height after submission */
+}
+
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  label {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .submit-button {
+    /* padding: 12px 24px; */
+    width:38%;
+    font-size: 16px;
+    background-color: #003049;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 30%;
+
+  }
+  
+  .submit-button:hover {
+    background-color: #022639;
+  }
+  
+  .submit-button:disabled {
+    background-color: #003049;
+    cursor: not-allowed;
+  }
+
+  .message {
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .attendance-summary {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 98%;
+  }
+  
+  .attendance-summary h3 {
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.attendance-counts {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    /* margin-top: 10px; */
+    height: 80px;
+  }
+  
+
+.attendance-item {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    flex: 1; 
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    gap: 10px; 
+  }
+  
+
+  .attendance-item p {
+    font-size: 16px;
+    color: #555;
+    margin: 0; 
+    flex: 3; 
+    text-align: left;
+  }
+  
+  
+  .attendance-item span {
+    font-size: 20px;
+    font-weight: bold;
+    flex: 1; 
+    text-align: right;
+  }
+
+  .present span {
+    color: #4CAF50;
+
+  }
+
+  .absent span {
+    color: #f44336;
+  }
+  
