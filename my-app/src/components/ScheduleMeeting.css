@@ -1,0 +1,104 @@
+
+.schedule-meeting-container {
+    max-width: 600px;
+    margin-left:30%;
+    margin-top:5%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+
+  .schedule-meeting-container h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+
+  .error-message {
+    font-size: 14px;
+    color: red;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .success-message {
+    font-size: 14px;
+    color: green;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .schedule-meeting-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .form-group label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+
+  .form-group input[type="text"],
+  .form-group input[type="datetime-local"],
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .form-group textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .form-group input[type="text"]:hover,
+  .form-group input[type="datetime-local"]:hover,
+  .form-group textarea:hover {
+    border-color: #888;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="datetime-local"]:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #4caf50;
+  }
+  
+  .schedule-meeting-form button {
+    padding: 10px 15px;
+    font-size: 16px;
+    color: white;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .schedule-meeting-form button:hover {
+    background-color: #45a049;
+  }
+  
+  .schedule-meeting-form button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  

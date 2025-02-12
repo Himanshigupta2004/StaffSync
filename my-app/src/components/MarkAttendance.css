@@ -1,0 +1,58 @@
+/* Main container */
+.attendance-container {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  height: 30vh;
+  margin: auto;
+  margin-top: 5vh;
+  /* gap: 15px; Adds spacing between elements */
+}
+
+
+
+/* Button styles */
+.action-button {
+  background-color: #003049;
+  color: white;
+  border: none;
+  /* padding: 12px 24px; */
+ 
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #01131d;
+}
+
+/* Message styling */
+.message {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Timer container */
+.timer-container {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.timer-container p {
+  font-size: 18px;
+  color: #333;
+}

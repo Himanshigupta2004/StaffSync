@@ -1,0 +1,98 @@
+
+.get-salary-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f4f4f9;
+}
+
+.get-salary-details__form {
+  background: linear-gradient(135deg, #ece4db, #d3d3e8);
+  width: 100%;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.get-salary-details__form .inputs-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.get-salary-details__form label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.get-salary-details__form input {
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 14px;
+}
+
+.get-salary-details__form button {
+  padding: 12px 25px;
+  background: #03045e;
+  color: white;
+  border: none;
+  width:10vw;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 35%;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+
+}
+
+.get-salary-details__form button:hover {
+  background:#03045e;
+}
+
+.salary-image {
+  max-width: 40vh;
+  width:40vw;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  mix-blend-mode:darken;
+}
+.payslipbutton{
+  margin-left:2vw ;
+}
+
+
+@media (max-width: 600px) {
+  .get-salary-details__form {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .salary-image {
+    margin-top: 20px;
+  }
+
+  .get-salary-details__form .inputs-container {
+    width: 100%; 
+  }
+}
