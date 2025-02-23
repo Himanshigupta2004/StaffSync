@@ -86,7 +86,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
-  } */
+  } 
   
    .submit-leave-button:disabled {
     background-color: #ccc;

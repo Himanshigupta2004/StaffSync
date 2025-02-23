@@ -28,7 +28,7 @@
   margin: 5px 0;
   background-color: #fff;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .manage-salary-hr ul li:hover {
