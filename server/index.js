@@ -18,6 +18,9 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get("/", (req,res)=>{
+    res.send("Server is running");
+})
 app.use("/api/auth", userRoutes);
 app.use("/api/leave", leaveRoute);
 app.use("/api/att", attendanceRoute);
