@@ -1,0 +1,249 @@
+/* Navbar.css */
+.navbar-toggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001; /* Above sidebar */
+    cursor: pointer;
+    background: #03045e;
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-toggle:hover {
+    transform: scale(1.1);
+    background: #0077b6;
+  }
+  
+  .hamburger-icon {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: -60px; /* Hidden off-screen by default */
+    width: 60px; /* Thin, icon-only width */
+    height: 100%;
+    background: linear-gradient(135deg, #f4f4f9, #e9ecef);
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease; /* Slide animation */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Scroll if too many items */
+  }
+  
+  .navbar.visible {
+    left: 0; /* Slide in when visible */
+  }
+  
+  .nav-sec1 {
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0; /* Prevent logo section from shrinking */
+  }
+  
+  .nav-sec1 img {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-sec1 img:hover {
+    transform: scale(1.1);
+  }
+  
+  .nav-sec2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nav-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1; /* Ensure items take available space */
+  }
+  
+  .item {
+    padding: 10px;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Prevent items from shrinking too much */
+  }
+  
+  .item:hover {
+    background: rgba(3, 4, 94, 0.1);
+  }
+  
+  .item a,
+  .item button {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center icons */
+    text-decoration: none;
+    color: #03045e;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .icon {
+    font-size: 24px;
+    color: #03045e;
+  }
+  
+  .login-btn {
+    background: none;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Tooltip Styling */
+  .item a,
+  .item button {
+    position: relative;
+  }
+  
+  .item a:hover::after,
+  .item button:hover::after {
+    content: attr(title);
+    position: absolute;
+    left: 70px; /* Position to the right of the sidebar */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #03045e;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 1001;
+    opacity: 0.9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar-toggle {
+      top: 10px;
+      left: 10px;
+      padding: 6px;
+    }
+  
+    .hamburger-icon {
+      font-size: 20px;
+    }
+  
+    .navbar {
+      width: 50px;
+      left: -50px; /* Adjust for smaller width */
+    }
+  
+    .navbar.visible {
+      left: 0;
+    }
+  
+    .nav-sec1 {
+      padding: 10px;
+    }
+  
+    .nav-sec1 img {
+      width: 35px;
+    }
+  
+    .nav-items {
+      gap: 12px;
+    }
+  
+    .item {
+      padding: 8px;
+    }
+  
+    .icon {
+      font-size: 20px;
+    }
+  
+    .item a:hover::after,
+    .item button:hover::after {
+      left: 60px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-toggle {
+      top: 8px;
+      left: 8px;
+      padding: 5px;
+    }
+  
+    .hamburger-icon {
+      font-size: 18px;
+    }
+  
+    .navbar {
+      width: 40px;
+      left: -40px; /* Adjust for smaller width */
+    }
+  
+    .navbar.visible {
+      left: 0;
+    }
+  
+    .nav-sec1 {
+      padding: 8px;
+    }
+  
+    .nav-sec1 img {
+      width: 30px;
+    }
+  
+    .nav-items {
+      gap: 10px;
+    }
+  
+    .item {
+      padding: 6px;
+    }
+  
+    .icon {
+      font-size: 18px;
+    }
+  
+    .item a:hover::after,
+    .item button:hover::after {
+      left: 50px;
+      font-size: 12px;
+      padding: 4px 8px;
+    }
+  }
+  
+  /* Ensure content doesn't overlap on small screens */
+  @media (max-height: 600px) {
+    .navbar {
+      height: auto; /* Allow scrolling if content exceeds height */
+      max-height: 100vh; /* Limit to viewport height */
+    }
+  
+    .nav-items {
+      gap: 8px; /* Reduce gap for more items */
+    }
+  
+    .item {
+      padding: 5px;
+    }
+  }

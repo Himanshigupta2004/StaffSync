@@ -1,0 +1,146 @@
+/* MarkAttendance.css */
+.attendance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center; /* Already centered horizontally */
+  width: 100%;
+  align-items: center; /* Vertically centers buttons */
+}
+
+.action-button {
+  background-color: #003049;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 0 1 auto; /* Changed from flex: 1 to prevent over-expansion */
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.action-button:hover {
+  background-color: #01131d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  animation: slideUp 0.3s ease-out;
+  width: 100%;
+}
+
+.timer-container {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.timer-container p {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .attendance-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .buttons-container {
+    gap: 10px;
+  }
+
+  .action-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    min-width: 120px;
+    max-width: none; /* Remove max-width for flexibility */
+  }
+
+  .message,
+  .timer-container p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .attendance-container {
+    padding: 10px;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .message,
+  .timer-container p {
+    font-size: 14px;
+  }
+}

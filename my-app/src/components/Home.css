@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.home-container{
+    background-color: black;
+    background-image: url('../assets/bg2.jpg');
+    width: 100vw;
+    height: 100vh;
+    margin-left: 5%;
+    margin-top: 0;
+    padding-top: 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-heading1{
+    color: rgb(0, 0, 0);
+    text-align: left;
+    font-size: 5rem;
+    margin-left: 2%;
+    /* font-family: "Noto Sans", serif; */
+    font-family: "Ubuntu", serif;
+}
+.home-heading2{
+    font-size: 1.2rem;
+    text-align: left;
+    margin-left: 3%;
+    color: rgb(91, 91, 91);
+    font-family: "Noto Sans", serif;
+    font-weight: 400;
+}
+.home-inner-div{
+    /* background-color: rgb(46, 202, 202); */
+    width: 80vw;
+    height: 20vh;
+    /* margin-left: 5%; */
+}
+
+.home-to-dash-btn{
+    width: 10vw;
+    height: 6vh;
+    background-color: rgb(5, 14, 72);
+    color: white;
+    font-family: "Ubuntu", serif;
+    border-radius: 5px;
+    margin-left: 3%;
+    margin-top: 1%;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

@@ -1,0 +1,101 @@
+/* Main.css */
+.main-mainpage-flex {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f4f9 0%, #e9ecef 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-mainpage {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard-title {
+  font-size: 2.5rem;
+  color: #03045e;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  background: linear-gradient(to right, #03045e, #0077b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1s ease-out;
+}
+
+.main-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.presentchart,
+.meetings {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out;
+}
+
+.main-main-2 {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out 0.2s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .main-content {
+    gap: 20px;
+  }
+
+  .presentchart,
+  .meetings,
+  .main-main-2 {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .main-mainpage-flex {
+    padding: 10px;
+  }
+}

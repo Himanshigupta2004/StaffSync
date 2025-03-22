@@ -1,0 +1,197 @@
+/* LeaveApplication.css */
+.leave-application {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f4f4f9;
+  width: 100%;
+}
+
+h2, h3 {
+  text-align: center;
+  color: #d62828;
+  margin: 0;
+}
+
+.message {
+  text-align: center;
+  color: #d62828;
+  margin: 10px 0;
+}
+
+.leave-form-container {
+  background-color: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 1000px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.inputt {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background-color: #edede9;
+  border-radius: 5px;
+}
+
+.inputt label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.inputt > input,
+.inputt > textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputt > textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-leave-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #03045e;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.submit-leave-button:hover:not(:disabled) {
+  background-color: #04078a;
+}
+
+.submit-leave-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.leave-records-container {
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 1000px;
+  background-color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leave-records-header {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10px 0;
+  border-bottom: 2px solid #dcdcdc;
+  font-weight: bold;
+}
+
+.record-header-item {
+  text-align: center;
+  padding: 5px;
+}
+
+.leave-records-body {
+  margin-top: 10px;
+}
+
+.leave-record-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 10px 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.record-item {
+  text-align: center;
+  padding: 5px;
+  word-break: break-word;
+}
+
+.no-records {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .input-group {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  
+  .leave-records-header,
+  .leave-record-row {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .leave-application {
+    padding: 15px;
+    gap: 30px;
+  }
+
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .leave-form-container,
+  .leave-records-container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .submit-leave-button {
+    width: 100%;
+  }
+
+  .leave-records-header,
+  .leave-record-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .record-header-item,
+  .record-item {
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  .inputt {
+    padding: 8px;
+  }
+
+  .inputt > input,
+  .inputt > textarea {
+    font-size: 14px;
+  }
+}

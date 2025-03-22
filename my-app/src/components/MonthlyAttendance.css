@@ -1,0 +1,235 @@
+/* MonthlyAttendance.css */
+.monthly-attendance-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  margin: 20px auto;
+  gap: 20px;
+  transition: all 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.monthly-attendance-container.expanded {
+  max-height: 800px; /* Adjusted for content */
+}
+
+.monthly-attendance-container h2 {
+  font-size: 2rem;
+  color: #d62828;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+label {
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #d62828;
+  outline: none;
+  box-shadow: 0 0 5px rgba(214, 40, 40, 0.3);
+}
+
+.submit-button {
+  width: 100%;
+  max-width: 200px;
+  font-size: 16px;
+  background-color: #003049;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto;
+  display: block;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #022639;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  font-size: 18px;
+  color: #333;
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.attendance-summary {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  animation: slideUp 0.3s ease-out;
+}
+
+.attendance-summary h3 {
+  font-size: 20px;
+  color: #d62828;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.attendance-counts {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.attendance-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.attendance-item:hover {
+  transform: scale(1.03);
+}
+
+.attendance-item p {
+  font-size: 16px;
+  color: #555;
+  margin: 0;
+  flex: 3;
+  text-align: left;
+}
+
+.attendance-item span {
+  font-size: 20px;
+  font-weight: bold;
+  flex: 1;
+  text-align: right;
+}
+
+.present span {
+  color: #4CAF50;
+}
+
+.absent span {
+  color: #f44336;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .monthly-attendance-container {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .attendance-counts {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .attendance-item {
+    min-width: 100%;
+  }
+
+  .submit-button {
+    max-width: 100%;
+  }
+
+  .monthly-attendance-container h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .monthly-attendance-container {
+    padding: 10px;
+  }
+
+  .input-container {
+    gap: 10px;
+  }
+
+  input,
+  .submit-button {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .message,
+  .attendance-item p {
+    font-size: 14px;
+  }
+
+  .attendance-item span {
+    font-size: 18px;
+  }
+
+  .attendance-summary h3 {
+    font-size: 18px;
+  }
+}

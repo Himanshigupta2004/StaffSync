@@ -1,0 +1,54 @@
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5em;
+  color: #4a90e2;
+}
+
+.dashboard-header p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.dashboard-actions {
+  margin-top: 20px;
+}
+
+.download-button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #357abd;
+}
+
+.dashboard-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 10px;
+  background-color: #4a90e2;
+  color: white;
+  width: 100%;
+}

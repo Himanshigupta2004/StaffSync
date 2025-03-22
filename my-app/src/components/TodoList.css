@@ -1,0 +1,155 @@
+/* TodoList.css */
+.todo-container {
+  padding: 20px;
+  background: linear-gradient(135deg, #f9f9f9, #ececec);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  animation: slideUp 0.5s ease-out;
+}
+
+.todo-container h2 {
+  font-size: 1.8rem;
+  color: #03045e;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  background: linear-gradient(to right, #03045e, #0077b6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.todo-input input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.todo-input input:focus {
+  border-color: #03045e;
+  outline: none;
+  box-shadow: 0 0 5px rgba(3, 4, 94, 0.3);
+}
+
+.todo-add-button button {
+  background: linear-gradient(to right, #03045e, #0077b6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-add-button button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 4, 94, 0.3);
+}
+
+.todo-list-container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease-out;
+}
+
+.todo-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.todo-list li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.todo-list li span {
+  flex: 1;
+  cursor: pointer;
+  color: #03045e;
+  font-size: 16px;
+}
+
+.todo-list li button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-list li button:hover {
+  background: #d32f2f;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 15px;
+  }
+
+  .todo-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .todo-input {
+    flex-direction: column;
+  }
+
+  .todo-add-button button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .todo-input input,
+  .todo-add-button button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .todo-list li span,
+  .todo-list li button {
+    font-size: 14px;
+  }
+}

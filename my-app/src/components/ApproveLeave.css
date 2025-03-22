@@ -1,0 +1,107 @@
+.manage-leaves-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+    padding: 20px;
+    height: 100%;
+    max-width: 75vw;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  .manage-leaves-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+  
+
+  .message {
+    font-size: 16px;
+    color: #4caf50;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+
+  .leave-list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .leave-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction:row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width:50vw
+  }
+  
+
+  .leave-item p {
+
+    margin: auto;
+    font-size: 16px;
+    color: #555;
+    flex:1;
+  }
+  
+
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+    margin-top: 3px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.approve {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  button.approve:hover {
+    background-color: #45a049;
+  }
+  
+  button.reject {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  button.reject:hover {
+    background-color: #d32f2f;
+  }
+  
+  .no-requests {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+    margin-top: 20px;
+  }
+  
+  /* .leaves-div-manage{
+    display: flex;
+  } */
