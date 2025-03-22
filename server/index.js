@@ -11,7 +11,7 @@ const reportRoutes = require('./routes/reportRoutes')
 const app = express();
 require("dotenv").config();
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE' ,'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true, 
