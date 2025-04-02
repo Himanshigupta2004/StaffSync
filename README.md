@@ -28,8 +28,8 @@ Staff Sync is a **MERN stack** web application designed for hr employee manageme
 ## ⚙️ Installation & Setup
 1. **Clone the repository:**
    ```sh
-   git clone 
-   cd 
+   git clone https://github.com/Himanshigupta2004/StaffSync.git
+   cd StaffSync
    ```
 2. **Install dependencies for backend:**
    ```sh
