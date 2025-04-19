@@ -13,6 +13,7 @@ import ScheduleMeeting from "./components/ScheduleMeeting.jsx";
 import GetMeetings from "./components/ViewMeetings.jsx";
 import ReportDashboard from "./components/ReportDashboard.jsx";
 import { Home } from "./components/Home.jsx";
+
 import { jwtDecode } from "jwt-decode";
 
 const API_URL = process.env.REACT_APP_API_URL; // Backend URL from .env

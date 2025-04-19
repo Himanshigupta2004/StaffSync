@@ -1,12 +1,10 @@
-import axios from 'axios';
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 
-export const RegisterRoute = "http://localhost:5000/api/auth/register";
-
-export const loginRoute = "http://localhost:5000/api/auth/login";
+export const RegisterRoute = `${BASE_URL}/api/auth/register`;
+export const loginRoute = `${BASE_URL}/api/auth/login`;
 
 export const fetchAttendanceData = async (year, month, token) => {
-
-  const url = `http://localhost:5000/api/att/monthly-record/${year}/${month}`;
+  const url = `${BASE_URL}/api/att/monthly-record/${year}/${month}`;
   console.log('Making request to:', url);
 
   try {
@@ -22,24 +20,14 @@ export const fetchAttendanceData = async (year, month, token) => {
   }
 };
 
-
-
-const getTokenFromLocalStorage = () => {
-  const token = localStorage.getItem("jwt-token");
-  console.log("Token from localStorage:", token);  
-  return token;
-};
-
-
 export const markAttendance = async (latitude, longitude) => {
-  const token = getTokenFromLocalStorage(); 
-
+  const token = localStorage.getItem("jwt-token");
   if (!token) {
     console.error("No token found, user is not authenticated.");
     return; 
   }
 
-  const url = "http://localhost:5000/api/att/mark";
+  const url = `${BASE_URL}/api/att/mark`;
   
   try {
     const response = await axios.post(
@@ -57,6 +45,3 @@ export const markAttendance = async (latitude, longitude) => {
     throw error; 
   }
 };
-
-
-
