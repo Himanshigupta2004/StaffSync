@@ -1,101 +1,189 @@
 /* Main.css */
+
+/* Root container with a futuristic gradient and subtle texture */
 .main-mainpage-flex {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f4f4f9 0%, #e9ecef 100%);
+  background: linear-gradient(145deg, #1e1e2f 0%, #2a2a4a 100%);
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  padding: 30px;
+  overflow-x: hidden;
+  position: relative;
+  background-image: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
 }
 
+/* Glassmorphic container with blur effect */
 .container-mainpage {
   width: 95%;
-  max-width: 1400px;
+  max-width: 1500px;
   margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: floatIn 1.2s ease-out;
 }
 
+/* Main content layout with smooth spacing */
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }
 
+/* Dashboard title with glowing text and dynamic hover effect */
 .dashboard-title {
-  font-size: 2.5rem;
-  color: #03045e;
+  font-size: 3rem;
+  font-weight: 800;
   text-align: center;
-  margin-bottom: 20px;
-  font-weight: 700;
-  background: linear-gradient(to right, #03045e, #0077b6);
+  background: linear-gradient(90deg, #00ddeb, #ff4e50, #007bff);
+  background-size: 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeIn 1s ease-out;
+  animation: gradientFlow 4s linear infinite, fadeIn 1.5s ease-out;
+  text-shadow: 0 0 15px rgba(0, 221, 235, 0.5);
+  transition: transform 0.3s ease;
 }
 
+.dashboard-title:hover {
+  transform: scale(1.05);
+}
+
+/* Grid layout for chart and meetings with neumorphic style */
 .main-main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 35px;
 }
 
 .presentchart,
 .meetings {
-  background: white;
+  background: offwhite;
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  animation: slideUp 0.5s ease-out;
+  padding: 25px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideIn 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Subtle hover effect for chart and meetings */
+.presentchart:hover,
+.meetings:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.4), -12px -12px 30px rgba(255, 255, 255, 0.1);
+}
+
+/* Todo list section with similar neumorphic style */
 .main-main-2 {
-  background: white;
+  background: offwhite;
   border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  animation: slideUp 0.5s ease-out 0.2s;
+  padding: 25px;
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), -8px -8px 20px rgba(255, 255, 255, 0.05);
+  animation: slideIn 0.8s ease-out 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-main-2:hover {
+  transform: translateY(-10px);
+  box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.4), -12px -12px 30px rgba(255, 255, 255, 0.1);
 }
 
 /* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .main-main {
     grid-template-columns: 1fr;
+  }
+
+  .dashboard-title {
+    font-size: 2.5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .container-mainpage {
+    padding: 20px;
+    border-radius: 15px;
+  }
+
   .dashboard-title {
     font-size: 2rem;
   }
 
   .main-content {
-    gap: 20px;
+    gap: 25px;
+  }
+
+  .presentchart,
+  .meetings,
+  .main-main-2 {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-mainpage-flex {
+    padding: 15px;
+  }
+
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+
+  .container-mainpage {
+    padding: 15px;
   }
 
   .presentchart,
   .meetings,
   .main-main-2 {
     padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .dashboard-title {
-    font-size: 1.8rem;
-  }
-
-  .main-mainpage-flex {
-    padding: 10px;
+    border-radius: 12px;
   }
 }

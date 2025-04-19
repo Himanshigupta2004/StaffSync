@@ -51,7 +51,7 @@ module.exports.register = async (req, res, next) => {
 
 module.exports.login = async (req, res, next) => {
     try {
-        const { username, password } = req.body;
+        const { username, password ,role} = req.body;
         const user = await User.findOne({ username });
         if (!user) {
             return res.status(401).json({ status: false, msg: "Incorrect username or password" });
@@ -60,10 +60,15 @@ module.exports.login = async (req, res, next) => {
         if (!isPasswordValid) {
             return res.status(401).json({ status: false, msg: "Incorrect username or password" });
         }
+        if (role && role !== user.role) {
+            return res.status(403).json({ status: false, msg: `Access denied for role: ${role}` });
+        }
 
         const token = generateToken(user._id, user.role);
         const userResponse = user.toObject();
         delete userResponse.password;
+
+        return res.status(200).json({ status: true, user: userResponse, token });
 
         return res.status(200).json({ status: true, user: userResponse, token });
     } catch (ex) {

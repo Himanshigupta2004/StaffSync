@@ -12,6 +12,7 @@ function Login() {
     const [values, setValues] = useState({
         username: "",
         password: "",
+        role: "",  // Added role field
     });
 
     const toastOptions = {
@@ -32,20 +33,23 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (handleValidation()) {
-            const { password, username } = values;
+            const { password, username, role } = values;  // Added role here
             try {
                 const { data } = await axios.post(loginRoute, {
                     username,
                     password,
+                    role,  // Include role in the request
                 });
                 console.log('Login response:', data);
                 if (data.status === false) {
                     toast.error(data.msg, toastOptions);
                 } else if (data.status === true) {
                     localStorage.setItem('jwt-token', data.token);
-                    localStorage.setItem('username',username);
-                    navigate("/");
+                    localStorage.setItem('username', username);
+                    localStorage.setItem('userRole', data.user.role);
+                    navigate("/");  // Redirect to home/dashboard after login
                 }
+                
             } catch (error) {
                 toast.error("Network error. Please try again later.", toastOptions);
                 console.error("Login error:", error);
@@ -55,9 +59,12 @@ function Login() {
     
 
     const handleValidation = () => {
-        const { password, username } = values;
+        const { password, username, role } = values;
         if (password === "" || username === "") {
             toast.error("Username and password are required", toastOptions);
+            return false;
+        } else if (role === "") {  // Check for role
+            toast.error("Please select a role", toastOptions);
             return false;
         }
         return true;
@@ -88,6 +95,16 @@ function Login() {
                         name="password" 
                         onChange={handleChange} 
                     />
+                    <select
+                            name="role"
+                            onChange={handleChange}
+                            placeholder="role"
+                            value={values.role}  // Ensure the role is controlled
+                            >
+                        <option value="">Select Role</option>
+                        <option value="employee">Employee</option>
+                        <option value="hr">HR</option>
+                    </select>
                     <button type="submit">Login</button>
                     <span>Don't have an account? <Link to="/signup">Register</Link></span>
                 </form>
@@ -131,18 +148,23 @@ const FormContainer = styled.div`
         border-radius: 2rem;
         padding: 3rem 5rem;
 
-        input {
-            background-color: transparent;
+        input, select {
+           background-color: transparent;
             padding: 1rem;
             border: 0.1rem solid #e0e1dd;
             border-radius: 0.4rem;
-            color: white;
+            color:black;
             width: 100%;
             font-size: 1rem;
 
             &:focus {
                 border: 0.1rem solid #997af0;
                 outline: none;
+            }
+
+            option {
+                background-color: white;
+                color:black;
             }
         }
 

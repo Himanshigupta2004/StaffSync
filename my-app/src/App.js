@@ -10,13 +10,13 @@ import Leave_hr from "./pages/Leave_hr.jsx";
 import SalaryManagement from "./pages/SalaryManagement.jsx";
 import SalaryEmployee from "./pages/SalaryEmployee.jsx";
 import ScheduleMeeting from "./components/ScheduleMeeting.jsx";
-import GetMeetings from "./components/GetMeetings.jsx";
+import GetMeetings from "./components/ViewMeetings.jsx";
 import ReportDashboard from "./components/ReportDashboard.jsx";
 import { Home } from "./components/Home.jsx";
 import { jwtDecode } from "jwt-decode";
 
 const API_URL = process.env.REACT_APP_API_URL; // Backend URL from .env
-
+console.log(API_URL);
 function App() {
   const [userRole, setUserRole] = useState(null);
   const [loading, setLoading] = useState(true);

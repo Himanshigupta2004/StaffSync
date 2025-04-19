@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "./Viewmeetings.css";
 
 const ViewMeetings = () => {
   const [meetings, setMeetings] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const token = localStorage.getItem("jwt-token"); 
+  const token = localStorage.getItem("jwt-token");
 
   useEffect(() => {
     const fetchMeetings = async () => {
@@ -16,7 +17,7 @@ const ViewMeetings = () => {
             Authorization: `Bearer ${token}`,
           },
         });
-        console.log(response.data); 
+        console.log(response.data);
         setMeetings(response.data);
         setError("");
       } catch (err) {
@@ -26,43 +27,38 @@ const ViewMeetings = () => {
         setLoading(false);
       }
     };
-  
+
     fetchMeetings();
   }, [token]);
-  
-
-  if (loading) {
-    return <p>Loading meetings...</p>;
-  }
-
-  if (error) {
-    return <p style={{ color: "red" }}>{error}</p>;
-  }
 
   return (
-    <div>
+    <div className="meetings-container">
       <h2>My Meetings</h2>
-      {meetings.length === 0 ? (
+      {loading ? (
+        <p>Loading meetings...</p>
+      ) : error ? (
+        <p style={{ color: "red" }}>{error}</p>
+      ) : meetings.length === 0 ? (
         <p>No meetings found</p>
       ) : (
-        <table border="1" style={{ width: "100%", textAlign: "left" }}>
+        <table className="meetings-table">
           <thead>
             <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Date</th>
-              <th>Organizer</th>
-              <th>Attendees</th>
+              <th data-label="Title">Title</th>
+              <th data-label="Description">Description</th>
+              <th data-label="Date">Date</th>
+              <th data-label="Organizer">Organizer</th>
+              <th data-label="Attendees">Attendees</th>
             </tr>
           </thead>
           <tbody>
             {meetings.map((meeting) => (
               <tr key={meeting._id}>
-                <td>{meeting.title}</td>
-                <td>{meeting.description}</td>
-                <td>{new Date(meeting.date).toLocaleString()}</td>
-                <td>{meeting.organizer?.username || "Unknown"}</td>
-                <td>
+                <td data-label="Title">{meeting.title}</td>
+                <td data-label="Description">{meeting.description}</td>
+                <td data-label="Date">{new Date(meeting.date).toLocaleString()}</td>
+                <td data-label="Organizer">{meeting.organizer?.username || "Unknown"}</td>
+                <td data-label="Attendees">
                   {meeting.attendees.map((attendee) => (
                     <span key={attendee._id}>{attendee.username}, </span>
                   ))}

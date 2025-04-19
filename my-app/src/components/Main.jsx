@@ -1,6 +1,6 @@
 import React from 'react';
 import './Main.css';
-import ViewMeetings from './GetMeetings';
+import ViewMeetings from './ViewMeetings';
 import AttendanceChart from './AttendanceChart';
 import TodoList from './TodoList';
 

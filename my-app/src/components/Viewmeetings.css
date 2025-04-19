@@ -1,0 +1,210 @@
+
+.meetings-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background:#f8f8f8;;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 0 5%; /* Adds balanced margins on left and right */
+    /* box-shadow: 0 0 30px rgba(0, 221, 235, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    animation: hologramFade 1.5s ease-out;
+    margin-top: 2%;
+  }
+  
+  /* Animated holographic border effect */
+  .meetings-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: offwhite;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+  }
+  
+  /* Heading with neon glow and flicker effect */
+  .meetings-container h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: offwhite;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+    animation: neonFlicker 3s infinite alternate, slideIn 1s ease-out;
+  }
+  
+  /* Loading and error messages with immersive styling */
+  .meetings-container p {
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 221, 235, 0.3);
+    border: 1px solid rgba(0, 221, 235, 0.2);
+    animation: pulse 2s infinite;
+  }
+  
+  .meetings-container p[style*="color: red"] {
+    background: rgba(255, 78, 80, 0.3);
+    color: #ff4e50;
+    border: 1px solid rgba(255, 78, 80, 0.4);
+    text-shadow: 0 0 10px rgba(255, 78, 80, 0.7);
+  }
+  
+  /* Table with a futuristic, floating card-like design */
+  .meetings-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    background: transparent;
+  }
+  
+  /* Table headers with a sleek, glowing effect */
+  .meetings-table thead {
+    background: transparent;
+  }
+  
+  .meetings-table th {
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(5, 5, 105, 0.593);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-align: left;
+    border-bottom: 2px solid rgba(0, 221, 235, 0.3);
+    text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+  }
+  
+  /* Table rows styled as floating cards */
+  .meetings-table tbody tr {
+    background: linear-gradient(145deg, rgba(30, 30, 47, 0.8), rgba(42, 42, 74, 0.6));
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 221, 235, 0.2);
+  }
+  
+
+  /* Table cells with smooth typography */
+  .meetings-table td {
+    padding: 15px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    border: none;
+    transition: color 0.3s ease;
+  }
+
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .meetings-container {
+      padding: 20px;
+      margin: 0 3%;
+    }
+  
+    .meetings-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .meetings-table th,
+    .meetings-table td {
+      padding: 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .meetings-container {
+      margin: 0 2%; /* Further reduced margins for smaller screens */
+    }
+  
+    .meetings-table {
+      display: block;
+      overflow-x: auto;
+      padding: 10px;
+    }
+  
+    .meetings-table thead,
+    .meetings-table tbody,
+    .meetings-table tr {
+      display: block;
+    }
+  
+    .meetings-table th,
+    .meetings-table td {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding: 12px;
+      border-bottom: none;
+      position: relative;
+    }
+  
+    .meetings-table th::before,
+    .meetings-table td::before {
+      content: attr(data-label);
+      font-weight: 600;
+      color: rgba(5, 5, 105, 0.593);
+      width: 40%;
+      min-width: 120px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+  
+    .meetings-table th {
+      background: linear-gradient(145deg, rgba(30, 30, 47, 0.8), rgba(42, 42, 74, 0.6));
+      border-bottom: 1px solid rgba(0, 221, 235, 0.2);
+    }
+  
+    .meetings-table tbody tr {
+      margin-bottom: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+  
+    .meetings-table td {
+      border-bottom: 1px solid rgba(0, 221, 235, 0.1);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .meetings-container {
+      padding: 15px;
+      border-radius: 12px;
+      margin: 0 1%; /* Minimal margins for small screens */
+    }
+  
+    .meetings-container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .meetings-container p {
+      font-size: 1.1rem;
+      padding: 15px;
+    }
+  
+    .meetings-table th::before,
+    .meetings-table td::before {
+      font-size: 0.8rem;
+      min-width: 100px;
+    }
+  
+    .meetings-table th,
+    .meetings-table td {
+      padding: 10px;
+      font-size: 0.85rem;
+    }
+  }
