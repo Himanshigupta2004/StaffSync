@@ -11,7 +11,10 @@ const reportRoutes = require('./routes/reportRoutes')
 const app = express();
 require("dotenv").config();
 app.use(cors({
-    origin: process.env.REACT_APP_API_URL, 
+    origin: [
+        "http://localhost:3000",
+        "https://staffsync-gamma.vercel.app"
+      ], 
     methods: ['GET', 'POST', 'PUT', 'DELETE' ,'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'], 
     credentials: true, 
