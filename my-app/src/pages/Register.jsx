@@ -37,16 +37,21 @@ function Register() {
                     role,
                 });
                 if (data.status === false) {
-                    toast.error(data.msg, toastOptions);
-                } else {
+                    toast.error(data.msg, toastOptions); // This will display "Username already taken" etc.
+                }
+                else {
                   
                     localStorage.setItem('userRole', role); 
                     toast.success("Registration successful", toastOptions);
                     navigate("/login");  
                 }
             } catch (error) {
-                console.error("Error during registration:", error);
-                toast.error("An unexpected error occurred.", toastOptions);
+                if (error.response && error.response.data && error.response.data.msg) {
+                    toast.error(error.response.data.msg, toastOptions);
+                } else {
+                    console.error("Error during registration:", error);
+                    toast.error("An unexpected error occurred.", toastOptions);
+                }
             }
         }
     };
