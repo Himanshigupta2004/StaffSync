@@ -215,6 +215,35 @@ const FormContainer = styled.div`
             }
         }
     } 
+        @media (max-width: 480px) {
+        padding: 0.5rem;
+
+        .brand {
+            flex-direction: column;
+            gap: 0.5rem;
+            img {
+                height: 2rem;
+            }
+            h1 {
+                font-size: 1rem;
+            }
+        }
+
+        form {
+            padding: 1rem;
+            border-radius: 0.8rem;
+            max-width: 95%;
+        }
+
+        input, select, button {
+            font-size: 0.85rem;
+            padding: 0.6rem;
+        }
+
+        span {
+            font-size: 0.75rem;
+        }
+    }
 `;
 
 export default Register;
