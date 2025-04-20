@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './ScheduleMeeting.css';
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const ScheduleMeeting = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -33,7 +34,7 @@ const ScheduleMeeting = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/meeting/schedule-meeting", 
+        `${BASE_URL}/api/meeting/schedule-meeting`, 
         meetingData,
         {
           headers: {

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import './Chart.css';
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 ChartJS.register(ArcElement, Tooltip, Legend);
 const fetchAttendanceData = async (month, year) => {
   const token = localStorage.getItem("jwt-token");
@@ -11,7 +12,7 @@ const fetchAttendanceData = async (month, year) => {
     console.error("No token found in localStorage");
     return;
   }
-  const url = `http://localhost:5000/api/att/monthly-record/${year}/${month}`;
+  const url = `${BASE_URL}/api/att/monthly-record/${year}/${month}`;
   try {
     const response = await axios.get(url, {
       headers: {

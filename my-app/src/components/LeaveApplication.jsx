@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './LeaveApplication.css';
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const LeaveApplication = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -26,7 +26,7 @@ const LeaveApplication = () => {
 
   const fetchLeaves = async (token) => {
     try {
-      const response = await axios.get("http://localhost:5000/api/leave/get-my-leaves", {
+      const response = await axios.get(`${BASE_URL}/api/leave/get-my-leaves`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const sortedLeaves = response.data.sort((a, b) => new Date(b.startDate) - new Date(a.startDate));
@@ -56,7 +56,7 @@ const LeaveApplication = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/leave/apply",
+        `${BASE_URL}/api/leave/apply`,
         { startDate, endDate, leaveReason },
         { headers: { Authorization: `Bearer ${token}` } }
       );

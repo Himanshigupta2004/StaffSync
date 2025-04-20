@@ -3,8 +3,7 @@ import axios from "axios";
 import './GetSalaryDetails.css';
 import money from '../assets/money.avif';
 import salaryy from '../assets/salaryy.avif';
-// import coins from '../assets/coins.jpg'; // New image (you can replace with a real URL or local asset)
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const GetSalaryDetails = () => {
   const [year, setYear] = useState(new Date().getFullYear());
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -19,7 +18,7 @@ const GetSalaryDetails = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/salary/get-salary/${year}/${month}`,
+        `${BASE_URL}/api/salary/get-salary/${year}/${month}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       const salaries = response.data.salaries;
@@ -49,7 +48,7 @@ const GetSalaryDetails = () => {
     try {
       const token = localStorage.getItem("jwt-token");
       const response = await axios.get(
-        `http://localhost:5000/api/salary/generate-payslip/${salaryDetails._id}`,
+        `${BASE_URL}/api/salary/generate-payslip/${salaryDetails._id}`,
         { headers: { Authorization: `Bearer ${token}` }, responseType: "blob" }
       );
       const blob = new Blob([response.data], { type: "application/pdf" });
@@ -124,7 +123,6 @@ const GetSalaryDetails = () => {
             </div>
           </div>
           <button onClick={downloadPaySlip} className="payslipbutton">Download Payslip</button>
-          {/* <img className="coins-image" src={coins} alt="Money Coins" /> */}
         </div>
       )}
     </div>

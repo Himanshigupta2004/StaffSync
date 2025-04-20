@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./MonthlyAttendance.css";
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const MonthlyAttendance = () => {
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
@@ -42,7 +42,7 @@ const MonthlyAttendance = () => {
         return;
       }
 
-      const url = `http://localhost:5000/api/att/monthly-record/${year}/${month}`;
+      const url = `${BASE_URL}/api/att/monthly-record/${year}/${month}`;
       const response = await axios.get(url, {
         headers: {
           Authorization: `Bearer ${token}`,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { markAttendance } from "../util/ApiRoutes";
 import "./MarkAttendance.css"; 
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const MarkAttendance = ({ token }) => {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);

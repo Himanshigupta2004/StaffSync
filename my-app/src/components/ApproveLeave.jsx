@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './ApproveLeave.css';
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const ManageLeaves = () => {
   const [leaves, setLeaves] = useState([]);
   const [message, setMessage] = useState("");
@@ -19,7 +20,7 @@ const ManageLeaves = () => {
           return;
         }
 
-        const response = await axios.get("http://localhost:5000/api/leave/all-leaves", {
+        const response = await axios.get(`${BASE_URL}/api/leave/all-leaves`, {
           headers: {
             Authorization: `Bearer ${token}`, 
           },
@@ -46,7 +47,7 @@ const ManageLeaves = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/leave/approve-leave/${leaveId}`,
+        `${BASE_URL}/api/leave/approve-leave/${leaveId}`,
         {},
         {
           headers: {
@@ -76,7 +77,7 @@ const ManageLeaves = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/leave/reject-leave/${leaveId}`,
+        `${BASE_URL}/api/leave/reject-leave/${leaveId}`,
         {},
         {
           headers: {

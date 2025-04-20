@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SalaryManagement.css';
+const BASE_URL = process.env.REACT_APP_API_URL;
+
 const ManageEmployeeSalary = () => {
   const [employees, setEmployees] = useState([]);
   const [selectedEmployee, setSelectedEmployee] = useState(null);
@@ -28,7 +30,7 @@ const ManageEmployeeSalary = () => {
           return;
         }
 
-        const response = await axios.get('http://localhost:5000/api/auth/allusers', {
+        const response = await axios.get(`${BASE_URL}/api/auth/allusers`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 
@@ -68,7 +70,7 @@ const ManageEmployeeSalary = () => {
       }
   
       const response = await axios.get(
-        `http://localhost:5000/api/salary/getsalarydetails/${currentYear}/${currentMonth}/${employee._id}`,
+        `${BASE_URL}/api/salary/getsalarydetails/${currentYear}/${currentMonth}/${employee._id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -128,7 +130,7 @@ const ManageEmployeeSalary = () => {
     if (salaryId) {
       try {
         const response = await axios.patch(
-          `http://localhost:5000/api/salary/update-salary/${salaryId}`,
+          `${BASE_URL}/api/salary/update-salary/${salaryId}`,
           { baseSalary, bonus, extraHoursWorked },
           {
             headers: {
@@ -143,7 +145,7 @@ const ManageEmployeeSalary = () => {
     } else {
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/salary/calculate-salary/${currentMonth}/${currentYear}/${selectedEmployee._id}`,
+          `${BASE_URL}/api/salary/calculate-salary/${currentMonth}/${currentYear}/${selectedEmployee._id}`,
           { baseSalary, bonus, extraHoursWorked },
           {
             headers: {
@@ -175,7 +177,7 @@ const ManageEmployeeSalary = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/salary/delete-salary/${salaryId}`,
+        `${BASE_URL}/api/salary/delete-salary/${salaryId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Viewmeetings.css";
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const ViewMeetings = () => {
   const [meetings, setMeetings] = useState([]);
   const [error, setError] = useState("");
@@ -12,7 +12,7 @@ const ViewMeetings = () => {
     const fetchMeetings = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/api/meeting/get-meetings", {
+        const response = await axios.get(`${BASE_URL}/api/meeting/get-meetings`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -1,11 +1,11 @@
 
 import React from "react";
 import "./ReportDashboard.css";
-
+const BASE_URL = process.env.REACT_APP_API_URL || "http://localhost:5000";
 const ReportDashboard = () => {
   const downloadReport = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/report/employee-report", {
+      const response = await fetch(`${BASE_URL}/api/report/employee-report`, {
         method: "GET",
       });
       if (response.ok) {
